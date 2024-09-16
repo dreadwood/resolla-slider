@@ -22,6 +22,10 @@ const swiperInstanse = new Swiper('.swiper-container', {
     pageUpDown: true,
   },
 
+  history: {
+    key: "slide",
+  },
+
   on: {
     init: async function (swiper) {
       for (let i = 0; i < (countSlides * 2); i++) {
@@ -83,6 +87,8 @@ async function loadSlide(swiper, index, username) {
     const slideEl = document.createElement('div')
     slideEl.classList.add('swiper-slide')
     slideEl.id = `slide-${username}-${index}`
+
+    slideEl.setAttribute("data-history", `Slide ${index}`)
 
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
