@@ -25,6 +25,10 @@ const swiperInstanse = new Swiper('.swiper-container', {
   history: {
     key: "slide",
   },
+  pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction',
+	},
 
   on: {
     init: async function (swiper) {
