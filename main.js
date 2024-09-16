@@ -1,6 +1,6 @@
 'use strict'
 
-const username = 'kberlinsky'
+const username = 'smenshov'
 const photoIndex = 1
 
 const countSlides = 6
