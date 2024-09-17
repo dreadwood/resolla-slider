@@ -8,4 +8,4 @@ const gContainer = document.querySelector('.gallery__container')
 const gBtnLeft = document.querySelector('.gallery__button-left')
 const gBtnRight = document.querySelector('.gallery__button-right')
 
-import './worker.js'
+//import './worker.js'
