@@ -23,7 +23,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   },
 
   history: {
-    key: "slide",
+    key: "gallery",
   },
 
   on: {
