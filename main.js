@@ -24,11 +24,13 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
   history: {
     key: "gallery",
+    replaceState: true,
+    root: "gallery",
   },
   pagination: {
-			el: '.swiper-pagination',
-			type: 'fraction',
-	},
+	el: '.swiper-pagination',
+	type: 'fraction',
+  },
 
   on: {
     init: async function (swiper) {
