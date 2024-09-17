@@ -25,7 +25,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   history: {
     key: "gallery",
     replaceState: true,
-    root: "gallery",
+  //  root: "gallery",
   },
   pagination: {
 	el: '.swiper-pagination',
@@ -94,7 +94,7 @@ async function loadSlide(swiper, index, username) {
     slideEl.classList.add('swiper-slide')
     slideEl.id = `slide-${username}-${index}`
 
-    slideEl.setAttribute("data-history", `Slide ${index}`)
+    slideEl.setAttribute("data-history", `slide${index}`)
 
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
