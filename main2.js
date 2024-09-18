@@ -14,7 +14,6 @@ const swiperInstanse = new Swiper('.swiper-container', {
     nextEl: '.gallery__button-right'
   },
   slidesPerView: 2,
-  slidesPerView: 3,
   grid: {
     rows: 3,
   },
