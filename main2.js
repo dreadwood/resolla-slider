@@ -14,8 +14,10 @@ const swiperInstanse = new Swiper('.swiper-container', {
     nextEl: '.gallery__button-right'
   },
   slidesPerView: 2,
-  slidesPerGroup: 2,
-  slidesPerColumn: 3,
+  slidesPerView: 3,
+  grid: {
+    rows: 3,
+  },
   spaceBetween: 10,
   keyboard: {
     pageUpDown: true,
