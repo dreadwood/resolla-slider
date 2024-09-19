@@ -15,9 +15,9 @@ const swiperInstanse = new Swiper('.swiper-container', {
   },
   slidesPerView: 2,
   grid: {
-    rows: 2,
+    rows: 3,
   },
-  slidesPerGroup: 4,
+  slidesPerGroup: 6,
   
   spaceBetween: 10,
   keyboard: {
