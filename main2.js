@@ -32,7 +32,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 	type: 'fraction',
   },
 
-observer: true,
+//observer: true,
 
   on: {
     init: async function (swiper) {
@@ -75,7 +75,7 @@ observer: true,
   }
 })
 
-swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
+//swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
 
 gBtnLeft?.addEventListener('click', () => {
   gBtnLeft?.setAttribute('disabled', 'disabled')
