@@ -32,7 +32,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 	type: 'fraction',
   },
 
-//observer: true,
+observer: true,
 
   on: {
     init: async function (swiper) {
@@ -75,6 +75,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   }
 })
 
+console.log(mutationRecords);
 console.log("hash is - ", window.location.hash.replace("#",""));
 //swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
 
