@@ -15,9 +15,9 @@ const swiperInstanse = new Swiper('.swiper-container', {
   },
   slidesPerView: 2,
   grid: {
-    rows: 3,
+    rows: 1,
   },
-  slidesPerGroup: 6,
+  slidesPerGroup: 2,
   
   spaceBetween: 10,
   keyboard: {
@@ -47,12 +47,12 @@ observer: true,
     // slideChange: async function (swiper) {
     //   console.log('slideChange');
     // },
-
+/*
     slideChangeTransitionStart: function (swiper) {
       swiper.keyboard.disable()
       console.log('slideChangeTransitionStart', swiper.keyboard.enabled);
     },
-/*
+
     slideChangeTransitionEnd: async function (swiper) {
       const nextIndex = swiper.slides.length + 1
       if (swiper.isEnd) {
