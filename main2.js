@@ -32,7 +32,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 	type: 'fraction',
   },
 
-observer: true,
+//observer: true,
 
   on: {
     init: async function (swiper) {
@@ -85,10 +85,6 @@ gBtnRight?.addEventListener('click', () => {
   gBtnRight?.setAttribute('disabled', 'disabled')
 })
 
-let observer = new MutationObserver(mutationRecords => {
-  console.log(mutationRecords); // console.log(изменения)
-});
-
 async function loadSlide(swiper, index, username) {
   const imgUrl = `https://resolla.com/faces/${username}/${index}.jpg`
 
@@ -121,3 +117,12 @@ async function loadSlide(swiper, index, username) {
 
   return
 }
+
+let observer = new MutationObserver(mutationRecords => {
+  console.log(mutationRecords); // console.log(изменения)
+});
+observer.observe(.swiper-container, {
+  childList: true, // наблюдать за непосредственными детьми
+  subtree: true, // и более глубокими потомками
+  characterDataOldValue: true // передавать старое значение в колбэк
+});
