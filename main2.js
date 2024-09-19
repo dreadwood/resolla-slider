@@ -75,7 +75,7 @@ observer: true,
   }
 })
 
-swiperInstanse.slideTo(4, 500, false);
+swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
 
 gBtnLeft?.addEventListener('click', () => {
   gBtnLeft?.setAttribute('disabled', 'disabled')
