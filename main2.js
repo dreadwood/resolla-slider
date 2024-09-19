@@ -73,8 +73,9 @@ observer: true,
       console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
     }
   }
-	swiperInstanse.slideTo(7, 500, false);
 })
+
+swiperInstanse.slideTo(7, 500, false);
 
 gBtnLeft?.addEventListener('click', () => {
   gBtnLeft?.setAttribute('disabled', 'disabled')
