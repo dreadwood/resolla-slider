@@ -121,7 +121,7 @@ async function loadSlide(swiper, index, username) {
 let observer = new MutationObserver(mutationRecords => {
   console.log(mutationRecords); // console.log(изменения)
 });
-observer.observe(swiper-container, {
+observer.observe(section, {
   childList: true, // наблюдать за непосредственными детьми
   subtree: true, // и более глубокими потомками
   characterDataOldValue: true // передавать старое значение в колбэк
