@@ -75,7 +75,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
   }
 })
 
-swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
+console.log("hash is - ", window.location.hash.replace("#",""));
+//swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
 
 gBtnLeft?.addEventListener('click', () => {
   gBtnLeft?.setAttribute('disabled', 'disabled')
