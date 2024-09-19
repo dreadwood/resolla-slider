@@ -60,7 +60,7 @@ observer: true,
           await loadSlide(swiper, nextIndex + i, username)
         }
       }
-*/
+
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
       }
@@ -71,7 +71,7 @@ observer: true,
 
       swiper.keyboard.enable()
       console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
-    }
+    }*/
   }
 })
 
