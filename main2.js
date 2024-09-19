@@ -75,7 +75,9 @@ observer: true,
   }
 })
 
-console.log(mutationRecords);
+let observer = new MutationObserver(mutationRecords => {
+  console.log(mutationRecords); // console.log(изменения)
+});
 console.log("hash is - ", window.location.hash.replace("#",""));
 //swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
 
