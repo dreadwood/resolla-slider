@@ -2,7 +2,7 @@
 
 const username = 'smenshov'
 const photoIndex = 1
-const countSlides = 6
+const countSlides = 30
 
 const gContainer = document.querySelector('.gallery__container')
 const gBtnLeft = document.querySelector('.gallery__button-left')
@@ -17,6 +17,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
   grid: {
     rows: 3,
   },
+  slidesPerGroup: 6,
+  
   spaceBetween: 10,
   keyboard: {
     pageUpDown: true,
@@ -30,9 +32,12 @@ const swiperInstanse = new Swiper('.swiper-container', {
 	type: 'fraction',
   },
 
+observer: true,
+
   on: {
     init: async function (swiper) {
-      for (let i = 0; i < (countSlides * 2); i++) {
+	//for (let i = 0; i < (countSlides * 2); i++) {
+      for (let i = 0; i < countSlides; i++) {
         await loadSlide(swiper, photoIndex + i, username)
       }
 
@@ -68,6 +73,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
     }
   }
+	swiperInstanse.slideTo(7, 500, false);
 })
 
 gBtnLeft?.addEventListener('click', () => {
@@ -93,7 +99,7 @@ async function loadSlide(swiper, index, username) {
     slideEl.id = `slide-${username}-${index}`
 
     //slideEl.setAttribute("data-history", `slide${index}`)
-    slideEl.setAttribute("data-hash", `slide${index}`)
+    slideEl.setAttribute("data-hash", `${index}`)
 
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
