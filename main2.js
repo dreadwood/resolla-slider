@@ -37,10 +37,10 @@ observer: true,
   on: {
     init: async function (swiper) {
 	//for (let i = 0; i < (countSlides * 2); i++) {
-      for (let i = 0; i < countSlides; i++) {
+/*      for (let i = 0; i < countSlides; i++) {
         await loadSlide(swiper, photoIndex + i, username)
       }
-
+*/
       swiper.keyboard.enable()
     },
     
@@ -52,7 +52,7 @@ observer: true,
       swiper.keyboard.disable()
       console.log('slideChangeTransitionStart', swiper.keyboard.enabled);
     },
-
+/*
     slideChangeTransitionEnd: async function (swiper) {
       const nextIndex = swiper.slides.length + 1
       if (swiper.isEnd) {
@@ -60,7 +60,7 @@ observer: true,
           await loadSlide(swiper, nextIndex + i, username)
         }
       }
-
+*/
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
       }
