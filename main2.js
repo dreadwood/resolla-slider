@@ -15,7 +15,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   },
   slidesPerView: 2,
   grid: {
-    rows: 1,
+    rows: 2,
   },
   slidesPerGroup: 2,
   
@@ -37,17 +37,17 @@ const swiperInstanse = new Swiper('.swiper-container', {
   on: {
     init: async function (swiper) {
 	//for (let i = 0; i < (countSlides * 2); i++) {
-/*      for (let i = 0; i < countSlides; i++) {
+      for (let i = 0; i < countSlides; i++) {
         await loadSlide(swiper, photoIndex + i, username)
       }
-*/
+
       swiper.keyboard.enable()
     },
     
     // slideChange: async function (swiper) {
     //   console.log('slideChange');
     // },
-/*
+
     slideChangeTransitionStart: function (swiper) {
       swiper.keyboard.disable()
       console.log('slideChangeTransitionStart', swiper.keyboard.enabled);
@@ -71,7 +71,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
       swiper.keyboard.enable()
       console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
-    }*/
+    }
   }
 })
 
