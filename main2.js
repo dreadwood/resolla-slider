@@ -75,9 +75,6 @@ observer: true,
   }
 })
 
-let observer = new MutationObserver(mutationRecords => {
-  console.log(mutationRecords); // console.log(изменения)
-});
 console.log("hash is - ", window.location.hash.replace("#",""));
 //swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
 
@@ -87,6 +84,10 @@ gBtnLeft?.addEventListener('click', () => {
 gBtnRight?.addEventListener('click', () => {
   gBtnRight?.setAttribute('disabled', 'disabled')
 })
+
+let observer = new MutationObserver(mutationRecords => {
+  console.log(mutationRecords); // console.log(изменения)
+});
 
 async function loadSlide(swiper, index, username) {
   const imgUrl = `https://resolla.com/faces/${username}/${index}.jpg`
