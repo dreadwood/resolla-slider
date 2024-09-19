@@ -17,7 +17,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   grid: {
     rows: 2,
   },
-  slidesPerGroup: 2,
+  slidesPerGroup: 4,
   
   spaceBetween: 10,
   keyboard: {
