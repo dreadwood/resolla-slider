@@ -37,7 +37,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
   on: {
     init: async function (swiper) {
-      for (let i = 0; i < (countSlides * 2); i++) {
+      for (let i = 0; i < (countSlides * 3); i++) {
 	// (countSlides * 2)
         await loadSlide(swiper, photoIndex + i, username)
       }
@@ -58,12 +58,12 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
     slideChangeTransitionEnd: async function (swiper) {
       const nextIndex = swiper.slides.length + 1
-      if (swiper.isEnd) {
+/*      if (swiper.isEnd) {
         for (let i = 0; i < countSlides; i++) {
           await loadSlide(swiper, nextIndex + i, username)
         }
-      }
-
+      },
+*/
 	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
 	swiperInstanse.updateSlides()
 
@@ -145,6 +145,7 @@ async function loadSlide(swiper, index, username) {
 }
 
 swiperInstanse.slideTo(sliderPage, 500, false);
+console.log('swiper initialSlide = ', swiperInstanse.initialSlide);
 
 //swiperInstanse.on('realIndexChange', function () {
 //  console.log('real Index changed');
