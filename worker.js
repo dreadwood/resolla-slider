@@ -119,3 +119,7 @@ async function loadSlide(swiper, index, username) {
 }
 
 swiperInstanse.slideTo(sliderPage, 500, false);
+
+swiperInstanse.on('realIndexChange', function () {
+  console.log('real Index changed');
+});
