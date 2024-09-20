@@ -72,22 +72,29 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
       swiper.keyboard.enable()
     //  console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
-    }
+    },
 	    
   slideChange: function() {
-  // Get the next slide
-  var nextSlide = this.slides[this.activeIndex + 6];
-  var prevSlide = this.slides[this.activeIndex - 6];
-  // Add .swiper-slide-next to the next slide if it exists
-  if (nextSlide) {
-	nextSlide.classList.add('swiper-slide-next');
-  }
-  // Remove .swiper-slide-next from the previous slide if it was the last slide
-  if (prevSlide && this.isEnd) {
-	  prevSlide.classList.remove('swiper-slide-next');
+    // Get the next slide
+    var nextSlide = this.slides[this.activeIndex + 6];
+    var prevSlide = this.slides[this.activeIndex - 6];
+    // Add .swiper-slide-next to the next slide if it exists
+    if (nextSlide) {
+  	nextSlide.classList.add('swiper-slide-next')
+    }
+    // Remove .swiper-slide-next from the previous slide if it was the last slide
+    if (prevSlide && this.isEnd) { prevSlide.classList.remove('swiper-slide-next') }
   }
   } // on
 })
+
+swiper.on('slideChange', function() {
+if (this.slides[this.activeIndex + 6]) {
+        this.slides[this.activeIndex + 6].classList.add('swiper-slide-next');
+} else {
+        this.slides[this.activeIndex].classList.remove('swiper-slide-next');
+}
+});
 
 // recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
 //swiperInstanse.updateSlides()
