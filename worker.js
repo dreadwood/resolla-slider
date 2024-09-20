@@ -55,12 +55,12 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
     slideChangeTransitionEnd: async function (swiper) {
       const nextIndex = swiper.slides.length + 1
-/*      if (swiper.isEnd) {
+      if (swiper.isEnd) {
         for (let i = 0; i < countSlides; i++) {
           await loadSlide(swiper, nextIndex + i, username)
         }
       },
-*/
+
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
       }
@@ -90,13 +90,14 @@ const swiperInstanse = new Swiper('.swiper-container', {
 }) // swiper
 
 swiperInstanse.on('afterInit', function() {
-//	swiperInstanse.slideTo(sliderPage, 500, false),
+	swiperInstanse.slideTo(sliderPage, 500, false),
 	console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage);
 });
 
 swiperInstanse.on('slideChangeTransitionEnd', function() {
 	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
-	swiperInstanse.updateSlides()
+	swiperInstanse.updateSlides(),
+	console.log('swiperInstanse.updateSlides()'),
 });
 		
 /*
