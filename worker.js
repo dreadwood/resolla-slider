@@ -164,3 +164,4 @@ swiperInstanse.params.initialSlide = sliderPage;
 // меняем количество отображаемых слайдов
 swiperInstanse.update();
 // обновляем Swiper
+swiperInstanse.slideTo(sliderPage, 500, false));
