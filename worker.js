@@ -137,7 +137,7 @@ async function loadSlide(swiper, index, username) {
 	//var sl = `${index}`
 	//sl = Math.floor(sl/6)+1
     slideEl.setAttribute("data-hash", `${index}`)
-
+	slideEl.setAttribute("id", `${index}`)
 
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
@@ -164,4 +164,4 @@ swiperInstanse.params.initialSlide = sliderPage;
 // меняем количество отображаемых слайдов
 swiperInstanse.update();
 // обновляем Swiper
-swiperInstanse.slideTo(sliderPage, 500, false));
+swiperInstanse.slideTo(sliderPage, 500, false);
