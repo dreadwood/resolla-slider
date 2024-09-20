@@ -61,6 +61,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
         }
       }
 
+	    swiper.updateSlides()
+
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
       }
@@ -70,7 +72,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       }
 
       swiper.keyboard.enable()
-    //  console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
+      console.log('slideChangeTransitionEnd + updateSlides');
     },
 /*	    
   slideChange: function() {
