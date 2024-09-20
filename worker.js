@@ -94,6 +94,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
 swiperInstanse.on('afterInit', function() {
 	swiperInstanse.slideTo(sliderPage, 500, false);
+	console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage);
 })
 
 /*
@@ -151,6 +152,6 @@ async function loadSlide(swiper, index, username) {
 //  console.log('real Index changed');
 //});
 swiperInstanse.on('slideChange', function () {
-  console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide);
+//  console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide);
   console.log('real and active Index are = ', swiperInstanse.realIndex, ' and ', swiperInstanse.activeIndex);
 });
