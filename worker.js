@@ -42,9 +42,6 @@ const swiperInstanse = new Swiper('.swiper-container', {
         await loadSlide(swiper, photoIndex + i, username)
       }
       swiper.keyboard.enable()
-	
-	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
-	swiperInstanse.updateSlides()
     },
     
     // slideChange: async function (swiper) {
@@ -145,7 +142,7 @@ async function loadSlide(swiper, index, username) {
 }
 
 swiperInstanse.slideTo(sliderPage, 500, false);
-console.log('swiper initialSlide = ', swiperInstanse.initialSlide);
+console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide);
 
 //swiperInstanse.on('realIndexChange', function () {
 //  console.log('real Index changed');
