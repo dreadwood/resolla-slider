@@ -160,8 +160,8 @@ swiperInstanse.on('slideChange', function () {
   console.log('real and active Index are = ', swiperInstanse.realIndex, ' and ', swiperInstanse.activeIndex);
 });
 
-swiperInstanse.params.initialSlide = sliderPage;
+//swiperInstanse.params.initialSlide = sliderPage;
 // меняем количество отображаемых слайдов
-swiperInstanse.update();
+//swiperInstanse.update();
 // обновляем Swiper
-swiperInstanse.slideTo(sliderPage, 500, false);
+//swiperInstanse.slideTo(sliderPage, 500, false);
