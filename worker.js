@@ -1,5 +1,6 @@
 'use strict'
 
+/* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
   navigation: {
     prevEl: '.gallery__button-left',
@@ -21,7 +22,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   //},
   hashNavigation: {
         watchState: true,
-        },
+  },
   pagination: {
 	el: '.swiper-pagination',
 	type: 'fraction',
@@ -29,7 +30,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
   on: {
     init: async function (swiper) {
-      for (let i = 0; i < (countSlides * 2); i++) {
+      for (let i = 0; i < (countSlides * 6); i++) {
+	// (countSlides * 2)
         await loadSlide(swiper, photoIndex + i, username)
       }
 
@@ -90,7 +92,11 @@ async function loadSlide(swiper, index, username) {
     slideEl.id = `slide-${username}-${index}`
 
     //slideEl.setAttribute("data-history", `slide${index}`)
-    slideEl.setAttribute("data-hash", `slide${index}`)
+    //slideEl.setAttribute("data-hash", `slide${index}`)
+	var sl = `${index}`
+	sl = (sl-1)/6+1
+    slideEl.setAttribute("data-hash", sl)
+
 
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
@@ -104,3 +110,5 @@ async function loadSlide(swiper, index, username) {
 
   return
 }
+
+swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
