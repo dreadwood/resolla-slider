@@ -120,7 +120,9 @@ async function loadSlide(swiper, index, username) {
 
 swiperInstanse.slideTo(sliderPage, 500, false);
 
-swiperInstanse.on('realIndexChange', function () {
-  console.log('real Index changed');
+//swiperInstanse.on('realIndexChange', function () {
+//  console.log('real Index changed');
+//});
+swiperInstanse.on('slideChange', function () {
+  console.log('real and active Index are = ', swiperInstanse.realIndex, ' and ', swiperInstanse.activeIndex);
 });
-console.log('real and active Index are = ', swiperInstanse.realIndex, ' and ', swiperInstanse.activeIndex);
