@@ -56,7 +56,6 @@ const swiperInstanse = new Swiper('.swiper-container', {
           await loadSlide(swiper, nextIndex + i, username)
         }
       }
-
 	    swiper.updateSlides()
 
       if (!swiper.isBeginning) {
@@ -84,15 +83,19 @@ const swiperInstanse = new Swiper('.swiper-container', {
     console.log(this.activeIndex, " ", nextSlide, " ", prevSlide)
   }
 */
-  } // on
+  }, // on
+	afterInit: function(swiper) {
+	swiperInstanse.slideTo(sliderPage, 500, false)
+	console.log('== swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage)
+	}
 }) // swiper
 
-swiperInstanse.on('afterInit', function(swiper) {
+swiperInstanse.on('afterInit', function(swiperInstanse) {
 	swiperInstanse.slideTo(sliderPage, 500, false)
 	console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage)
 });
 
-swiperInstanse.on('slideChangeTransitionEnd', function(swiper) {
+swiperInstanse.on('slideChangeTransitionEnd', function(swiperInstanse) {
 	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
 	swiperInstanse.updateSlides()
 	console.log('swiperInstanse.updateSlides()')
