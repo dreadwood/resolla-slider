@@ -59,7 +59,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
         for (let i = 0; i < countSlides; i++) {
           await loadSlide(swiper, nextIndex + i, username)
         }
-      },
+      }
 
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
