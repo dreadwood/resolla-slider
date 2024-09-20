@@ -41,8 +41,10 @@ const swiperInstanse = new Swiper('.swiper-container', {
 	// (countSlides * 2)
         await loadSlide(swiper, photoIndex + i, username)
       }
-
       swiper.keyboard.enable()
+	
+	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
+	swiperInstanse.updateSlides()
     },
     
     // slideChange: async function (swiper) {
@@ -61,6 +63,9 @@ const swiperInstanse = new Swiper('.swiper-container', {
           await loadSlide(swiper, nextIndex + i, username)
         }
       }
+
+	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
+	swiperInstanse.updateSlides()
 
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
@@ -96,9 +101,6 @@ if (this.slides[this.activeIndex + 2]) {
         this.slides[this.activeIndex].classList.remove('swiper-slide-next');
 }
 });
-
-// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
-//swiperInstanse.updateSlides()
 
 gBtnLeft?.addEventListener('click', () => {
   gBtnLeft?.setAttribute('disabled', 'disabled')
