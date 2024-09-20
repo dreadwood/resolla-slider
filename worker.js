@@ -3,7 +3,7 @@
 var sliderPage = window.location.hash;
 if (sliderPage.length == 0) { sliderPage = 1; }
 sliderPage = Number(sliderPage.replace("#",""))
-console.log(sliderPage)
+console.log('sliderPage = ', sliderPage)
 
 /* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
@@ -76,8 +76,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
 	    
   slideChange: function() {
     // Get the next slide
-    var nextSlide = this.slides[this.activeIndex + 1];
-    var prevSlide = this.slides[this.activeIndex - 1];
+    var nextSlide = this.slides[this.activeIndex + 2];
+    var prevSlide = this.slides[this.activeIndex - 2];
     // Add .swiper-slide-next to the next slide if it exists
     if (nextSlide) {
   	nextSlide.classList.add('swiper-slide-next')
@@ -90,8 +90,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
 })
 
 swiperInstanse.on('slideChange', function() {
-if (this.slides[this.activeIndex + 6]) {
-        this.slides[this.activeIndex + 6].classList.add('swiper-slide-next');
+if (this.slides[this.activeIndex + 2]) {
+        this.slides[this.activeIndex + 2].classList.add('swiper-slide-next');
 } else {
         this.slides[this.activeIndex].classList.remove('swiper-slide-next');
 }
