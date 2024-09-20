@@ -22,11 +22,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   },
 
   // set vitrual path((
-  //history: {
-  //  key: "gallery",
-  //  replaceState: true,
-  //  root: "gallery",
-  //},
+
   hashNavigation: {
         watchState: true,
   },
@@ -91,12 +87,12 @@ const swiperInstanse = new Swiper('.swiper-container', {
   } // on
 }) // swiper
 
-swiperInstanse.on('afterInit', function() {
+swiperInstanse.on('afterInit', function(swiper) {
 	swiperInstanse.slideTo(sliderPage, 500, false)
 	console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage)
 });
 
-swiperInstanse.on('slideChangeTransitionEnd', function() {
+swiperInstanse.on('slideChangeTransitionEnd', function(swiper) {
 	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
 	swiperInstanse.updateSlides()
 	console.log('swiperInstanse.updateSlides()')
