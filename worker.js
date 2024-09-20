@@ -37,7 +37,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
   on: {
     init: async function (swiper) {
-      for (let i = 0; i < (countSlides * 6); i++) {
+      for (let i = 0; i < (countSlides * 2); i++) {
 	// (countSlides * 2)
         await loadSlide(swiper, photoIndex + i, username)
       }
@@ -76,15 +76,15 @@ const swiperInstanse = new Swiper('.swiper-container', {
 	    
   slideChange: function() {
     // Get the next slide
-    var nextSlide = this.slides[this.activeIndex + 6];
-    var prevSlide = this.slides[this.activeIndex - 6];
+    var nextSlide = this.slides[this.activeIndex + 1];
+    var prevSlide = this.slides[this.activeIndex - 1];
     // Add .swiper-slide-next to the next slide if it exists
     if (nextSlide) {
   	nextSlide.classList.add('swiper-slide-next')
     }
     // Remove .swiper-slide-next from the previous slide if it was the last slide
     if (prevSlide && this.isEnd) { prevSlide.classList.remove('swiper-slide-next') }
-    console.log(nextSlide, " ", prevSlide)
+    console.log(this.activeIndex, " ", nextSlide, " ", prevSlide)
   }
   } // on
 })
