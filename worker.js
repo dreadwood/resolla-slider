@@ -93,8 +93,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
 }) // swiper
 
 swiperInstanse.on('afterInit', function() {
-	swiperInstanse.slideTo(sliderPage, 500, false),
-	console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage),
+//	swiperInstanse.slideTo(sliderPage, 500, false),
+	console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage);
 })
 
 /*
