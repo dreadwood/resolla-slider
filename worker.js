@@ -117,4 +117,4 @@ async function loadSlide(swiper, index, username) {
   return
 }
 
-swiperInstanse.slideTo(Number((sliderPage.replace("#","")), 500, false);
+swiperInstanse.slideTo(Number(sliderPage.replace("#","")), 500, false);
