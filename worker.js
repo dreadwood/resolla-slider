@@ -1,7 +1,12 @@
 'use strict'
 
+var sliderPage = window.location.hash;
+if (sliderPage.length == 0) { sliderPage = 1; }
+
 /* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
+  initialSlide: sliderPage,
+	  
   navigation: {
     prevEl: '.gallery__button-left',
     nextEl: '.gallery__button-right'
@@ -93,9 +98,9 @@ async function loadSlide(swiper, index, username) {
 
     //slideEl.setAttribute("data-history", `slide${index}`)
     //slideEl.setAttribute("data-hash", `slide${index}`)
-	//var sl = `${index}`
-	//sl = (sl-1)/6+1
-    slideEl.setAttribute("data-hash", `${index}`)
+	var sl = `${index}`
+	sl = Math.floor(sl/6)+1
+    slideEl.setAttribute("data-hash", sl)
 
 
     const imgEl = document.createElement('img')
@@ -111,7 +116,4 @@ async function loadSlide(swiper, index, username) {
   return
 }
 
-var sliderPage = window.location.hash;
-if (sliderPage === [] ) { sliderPage = 1; }
-//if (typeof sliderPage === 'undefined' || [] ) { sliderPage = 1; }
 swiperInstanse.slideTo(sliderPage.replace("#",""), 500, false);
