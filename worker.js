@@ -123,4 +123,4 @@ swiperInstanse.slideTo(sliderPage, 500, false);
 swiperInstanse.on('realIndexChange', function () {
   console.log('real Index changed');
 });
-console.log('real and active Index are = ', swiper.realIndex, ' and ', swiper.activeIndex);
+console.log('real and active Index are = ', swiperInstanse.realIndex, ' and ', swiperInstanse.activeIndex);
