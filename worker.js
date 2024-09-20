@@ -2,6 +2,7 @@
 
 var sliderPage = window.location.hash;
 if (sliderPage.length == 0) { sliderPage = 1; }
+console.log(sliderPage)
 
 /* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
@@ -116,4 +117,4 @@ async function loadSlide(swiper, index, username) {
   return
 }
 
-swiperInstanse.slideTo(sliderPage.replace("#",""), 500, false);
+swiperInstanse.slideTo(Number((sliderPage.replace("#","")), 500, false);
