@@ -75,7 +75,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       swiper.keyboard.enable()
     //  console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
     },
-	    
+/*	    
   slideChange: function() {
     // Get the next slide
     var nextSlide = this.slides[this.activeIndex + 2];
@@ -88,9 +88,15 @@ const swiperInstanse = new Swiper('.swiper-container', {
     if (prevSlide && this.isEnd) { prevSlide.classList.remove('swiper-slide-next') }
     console.log(this.activeIndex, " ", nextSlide, " ", prevSlide)
   }
+*/
   } // on
+}) // swiper
+
+swiperInstanse.on('afterInit', function() {
+	swiperInstanse.slideTo(sliderPage, 500, false);
 })
 
+/*
 swiperInstanse.on('slideChange', function() {
 if (this.slides[this.activeIndex + 2]) {
         this.slides[this.activeIndex + 2].classList.add('swiper-slide-next');
@@ -98,7 +104,7 @@ if (this.slides[this.activeIndex + 2]) {
         this.slides[this.activeIndex].classList.remove('swiper-slide-next');
 }
 });
-
+*/
 gBtnLeft?.addEventListener('click', () => {
   gBtnLeft?.setAttribute('disabled', 'disabled')
 })
@@ -141,12 +147,10 @@ async function loadSlide(swiper, index, username) {
   return
 }
 
-swiperInstanse.slideTo(sliderPage, 500, false);
-console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide);
-
 //swiperInstanse.on('realIndexChange', function () {
 //  console.log('real Index changed');
 //});
 swiperInstanse.on('slideChange', function () {
+  console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide);
   console.log('real and active Index are = ', swiperInstanse.realIndex, ' and ', swiperInstanse.activeIndex);
 });
