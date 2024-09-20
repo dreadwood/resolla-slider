@@ -93,9 +93,9 @@ async function loadSlide(swiper, index, username) {
 
     //slideEl.setAttribute("data-history", `slide${index}`)
     //slideEl.setAttribute("data-hash", `slide${index}`)
-	var sl = `${index}`
-	sl = (sl-1)/6+1
-    slideEl.setAttribute("data-hash", sl)
+	//var sl = `${index}`
+	//sl = (sl-1)/6+1
+    slideEl.setAttribute("data-hash", `${index}`)
 
 
     const imgEl = document.createElement('img')
