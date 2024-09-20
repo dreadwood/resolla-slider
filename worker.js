@@ -2,8 +2,8 @@
 
 var sliderPage = window.location.hash;
 if (sliderPage.length == 0) { sliderPage = 1; }
-sliderPage = Number(sliderPage.replace("#",""))
-console.log('sliderPage = ', sliderPage)
+sliderPage = Number(sliderPage.replace("#",""));
+console.log('sliderPage = ', sliderPage);
 
 /* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
