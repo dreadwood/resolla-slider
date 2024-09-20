@@ -61,9 +61,6 @@ const swiperInstanse = new Swiper('.swiper-container', {
         }
       },
 */
-	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
-	swiperInstanse.updateSlides()
-
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
       }
@@ -95,8 +92,13 @@ const swiperInstanse = new Swiper('.swiper-container', {
 swiperInstanse.on('afterInit', function() {
 //	swiperInstanse.slideTo(sliderPage, 500, false),
 	console.log('swiper initialSlide = ', swiperInstanse.params.initialSlide, 'sliderPage ', sliderPage);
-})
+});
 
+swiperInstanse.on('slideChangeTransitionEnd', function() {
+	// recalculate number of slides and their offsets. Useful after you add/remove slides with JavaScript
+	swiperInstanse.updateSlides()
+});
+		
 /*
 swiperInstanse.on('slideChange', function() {
 if (this.slides[this.activeIndex + 2]) {
