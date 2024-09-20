@@ -88,7 +88,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   } // on
 })
 
-swiper.on('slideChange', function() {
+swiperInstanse.on('slideChange', function() {
 if (this.slides[this.activeIndex + 6]) {
         this.slides[this.activeIndex + 6].classList.add('swiper-slide-next');
 } else {
