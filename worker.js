@@ -111,4 +111,6 @@ async function loadSlide(swiper, index, username) {
   return
 }
 
-swiperInstanse.slideTo(window.location.hash.replace("#",""), 500, false);
+var sliderPage = window.location.hash;
+if sliderPage == null sliderPage = 1;
+swiperInstanse.slideTo(sliderPage.replace("#",""), 500, false);
