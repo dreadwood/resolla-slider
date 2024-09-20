@@ -2,6 +2,7 @@
 
 var sliderPage = window.location.hash;
 if (sliderPage.length == 0) { sliderPage = 1; }
+sliderPage = Number(sliderPage.replace("#",""))
 console.log(sliderPage)
 
 /* Swiper v6.x */
@@ -50,7 +51,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
     slideChangeTransitionStart: function (swiper) {
       swiper.keyboard.disable()
-      console.log('slideChangeTransitionStart', swiper.keyboard.enabled);
+    //  console.log('slideChangeTransitionStart', swiper.keyboard.enabled);
     },
 
     slideChangeTransitionEnd: async function (swiper) {
@@ -70,7 +71,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       }
 
       swiper.keyboard.enable()
-      console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
+    //  console.log('slideChangeTransitionEnd', swiper.keyboard.enabled);
     }
   }
 })
@@ -99,9 +100,9 @@ async function loadSlide(swiper, index, username) {
 
     //slideEl.setAttribute("data-history", `slide${index}`)
     //slideEl.setAttribute("data-hash", `slide${index}`)
-	var sl = `${index}`
-	sl = Math.floor(sl/6)+1
-    slideEl.setAttribute("data-hash", sl)
+	//var sl = `${index}`
+	//sl = Math.floor(sl/6)+1
+    slideEl.setAttribute("data-hash", `${index}`)
 
 
     const imgEl = document.createElement('img')
@@ -117,4 +118,4 @@ async function loadSlide(swiper, index, username) {
   return
 }
 
-swiperInstanse.slideTo(Number(sliderPage.replace("#","")), 500, false);
+swiperInstanse.slideTo(sliderPage, 500, false);
