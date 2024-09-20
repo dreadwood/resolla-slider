@@ -84,6 +84,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
     }
     // Remove .swiper-slide-next from the previous slide if it was the last slide
     if (prevSlide && this.isEnd) { prevSlide.classList.remove('swiper-slide-next') }
+    console.log(nextSlide, " ", prevSlide)
   }
   } // on
 })
