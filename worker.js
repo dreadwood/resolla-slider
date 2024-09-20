@@ -112,5 +112,5 @@ async function loadSlide(swiper, index, username) {
 }
 
 var sliderPage = window.location.hash;
-if (sliderPage == null) { sliderPage = 1; }
+if (typeof sliderPage === 'undefined') { sliderPage = 1; }
 swiperInstanse.slideTo(sliderPage.replace("#",""), 500, false);
