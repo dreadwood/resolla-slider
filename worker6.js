@@ -4,7 +4,7 @@
 const swiperInstanse = new Swiper('.swiper-container', {
   slidesPerView: 2,
   slidesPerGroup: 2,
-  slidesPerColumn: 1,
+  slidesPerColumn: 3,
   spaceBetween: 10,
   navigation: {
     prevEl: '.gallery__button-left',
