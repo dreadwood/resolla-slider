@@ -20,7 +20,7 @@ function slideslide() {
 	if (swiper.slides.length < sliderhash) {
 		console.log(sliderhash,'>',swiper.slides.length);
 		for (let sl=swiper.slides.length+1; sl<=sliderhash; sl++) {
-			swiper.appendSlide('<div class="swiper-slide" data-hash="'+sl.toString()+'"><img src=`https://resolla.com/faces/smenshov/'+sl.toString()+'.jpg></div>');
+			swiper.appendSlide('<div class="swiper-slide" data-hash="'+sl.toString()+'"><img src="https://resolla.com/faces/smenshov/'+sl.toString()+'.jpg"></div>');
 			console.log('sl= ',sl);
 		}
 	}
