@@ -28,7 +28,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       }
       swiper.keyboard.enable()
     },
-
+/*
     slideChangeTransitionStart: function (swiper) {
       swiper.keyboard.disable()
     },
@@ -51,7 +51,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       }
 
       swiper.keyboard.enable()
-    },
+    },*/
   }, // on
 }) // swiper
 
@@ -77,12 +77,7 @@ async function loadSlide(swiper, index, username) {
     slideEl.classList.add('swiper-slide')
     slideEl.id = `slide-${username}-${index}`
 
-    //slideEl.setAttribute("data-history", `slide${index}`)
-    //slideEl.setAttribute("data-hash", `slide${index}`)
-	//var sl = `${index}`
-	//sl = Math.floor(sl/6)+1
     slideEl.setAttribute("data-hash", `${index}`)
-	slideEl.setAttribute("id", `${index}`)
 
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
