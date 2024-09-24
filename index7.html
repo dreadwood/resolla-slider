@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 470px;
+      height: 490px;
+      margin: 20px auto;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-pagination {
+      display: block;
+      width: max-content;
+      left: 50%;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background-color: #fff;
+      transform: translateX(-50%);
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-color: #fff;
+      padding: 4px;
+      border-radius: 6px;
+    }
+     {
+      background-color: #fff;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(3, auto);
+      gap: 20px;
+    }
+
+    .content img {
+      display: block;
+      width: 225px;
+      height: 150px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    let appendNumber = 600;
+    let prependNumber = 1;
+
+    // колличесво фотографий фотографа
+    const COUNT = 600
+
+    // слайд на который хотим перейти
+    const NUMBER_SLIDE = 420
+
+    const swiper = new Swiper('.swiper', {
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      virtual: {
+        slides: (function () {
+          const slides = (new Array(COUNT).fill(''))
+
+          return slides;
+        })(),
+
+        renderSlide: (slideText, index) => {
+          console.log(slideText, index);
+
+          const slide = document.createElement('div')
+          slide.classList.add('swiper-slide')
+
+          const content = document.createElement('div')
+          content.classList.add('content');
+
+          [
+            'https://picsum.photos/225/150',
+            'https://picsum.photos/225/151',
+            'https://picsum.photos/225/152',
+            'https://picsum.photos/225/153',
+            'https://picsum.photos/225/154',
+            'https://picsum.photos/225/155',
+          ].forEach(it => {
+            const img = document.createElement('img')
+            img.src = it
+            content.appendChild(img)
+          })
+
+          slide.appendChild(content)
+          
+          return slide
+        }
+      },
+    });
+
+    // направляем на нужный слайд, который получаем из url
+    swiper.slideTo(NUMBER_SLIDE - 1)
+
+  </script>
+</body>
+
+</html>
