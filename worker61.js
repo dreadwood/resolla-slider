@@ -50,8 +50,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
       swiper.keyboard.enable()
     },
-			afterInit: function () {
-				const swiper = document.querySelector('.swiper-container').swiper;
+			afterInit: function (swiper) {
+				//const swiper = document.querySelector('.swiper-container').swiper;
 				var swai = Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup)+1;
 				if (swai < 1) {
 					swai = 1;
@@ -61,9 +61,9 @@ const swiperInstanse = new Swiper('.swiper-container', {
 				console.log('afterInit', swai);
 			},
 			
-			slideChange: function () {
-				const swiper = document.querySelector('.swiper-container').swiper;
-				swai = Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup)+1;
+			slideChange: function (swiper) {
+				//const swiper = document.querySelector('.swiper-container').swiper;
+				var swai = Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup)+1;
 				document.location.hash = swai;
 				
 				console.log('slideChange swai',swai,'=',swiper.activeIndex,'/',swiper.params.slidesPerGroup);
