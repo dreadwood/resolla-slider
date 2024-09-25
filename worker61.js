@@ -107,22 +107,3 @@ async function loadSlide(swiper, index, username) {
 
   return
 }
-
-function slideslide() {
-	let sliderhash = Number(window.location.hash.replace("#",""));
-	const swiper = document.querySelector('.swiper-container').swiper;
-	//console.log(sliderhash,'<>',swiper.slides.length/(swiper.params.slidesPerView*swiper.params.slidesPerColumn));
-	const slidenum = swiper.params.slidesPerView * swiper.params.slidesPerColumn;
-	if (sliderhash > swiper.slides.length/slidenum) {
-		console.log(sliderhash,'>',swiper.slides.length/slidenum);
-		const swlen = swiper.slides.length;
-		const swlennew = swlen + (sliderhash - swlen/slidenum) * slidenum;
-		console.log('swlen ',swlen,' swlennew ',swlennew);
-		for (let sl=swlen+1; sl<=swlennew; sl++) {
-			swiper.appendSlide('<div class="swiper-slide" data-hash="'+sl.toString()+'">Slide '+sl.toString()+'</div>');
-			console.log('sl=',sl);
-		}
-	swiper.slideTo((sliderhash-1) * slidenum, 50, false);
-	} 
-	console.log('sliderhash ',sliderhash,', new len ',swiper.slides.length, ', swiper.activeIndex', swiper.activeIndex);
-}
