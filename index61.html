@@ -24,7 +24,7 @@
     		const swlennew = swlen + (sliderhash - swlen/slidenum) * slidenum;
     		console.log('swlen ',swlen,' swlennew ',swlennew);
     		for (let sl=swlen+1; sl<=swlennew; sl++) {
-    			swiper.appendSlide('<div class="swiper-slide" data-hash="'+sl.toString()+'">Slide '+sl.toString()+'</div>');
+    			swiper.appendSlide('<div class="swiper-slide" data-hash="'+sl.toString()+'"><img src="https://resolla.com/faces/smenshov/'+sl.toString()+'.jpg"></div>');
     			console.log('sl=',sl);
     		}
     	swiper.slideTo((sliderhash-1) * slidenum, 50, false);
