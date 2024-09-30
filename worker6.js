@@ -29,7 +29,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
         datahash = Math.floor(i/2) + 1;
         await loadSlide(swiper, photoIndex + i, username, datahash);
       }
-      console.log('datahash 1',datahash);
+      //console.log('datahash 1',datahash);
       swiper.keyboard.enable()
     },
 
@@ -43,9 +43,9 @@ const swiperInstanse = new Swiper('.swiper-container', {
         for (let i = 0; i < 2*countSlides; i++) {
           await loadSlide(swiper, nextIndex + i, username, datahash+Math.floor(i/2) + 1);
         }
-        console.log('datahash 2',datahash);
+        //console.log('datahash 2',datahash);
         datahash = datahash + Math.floor((2*countSlides-1)/2) + 1;
-        console.log('datahash 3',datahash);
+        //console.log('datahash 3',datahash);
       }
 	    swiper.updateSlides()
 
