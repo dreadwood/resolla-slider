@@ -27,8 +27,9 @@ const swiperInstanse = new Swiper('.swiper-container', {
     init: async function (swiper) {
       for (let i = 0; i < (countSlides * 3); i++) {
         datahash = Math.floor(i/2) + 1;
-        await loadSlide(swiper, photoIndex + i, username, datahash)
+        await loadSlide(swiper, photoIndex + i, username, datahash);
       }
+      console.log('datahash 1',datahash);
       swiper.keyboard.enable()
     },
 
@@ -40,9 +41,11 @@ const swiperInstanse = new Swiper('.swiper-container', {
       const nextIndex = swiper.slides.length + 1
       if (swiper.isEnd) {
         for (let i = 2*datahash; i <= 2*datahash+countSlides; i++) {
-          await loadSlide(swiper, nextIndex + i, username, Math.floor(i/2) + 1)
+          await loadSlide(swiper, nextIndex + i, username, Math.floor(i/2) + 1);
         }
+        console.log('datahash 2',datahash);
         datahash = datahash+countSlides;
+        console.log('datahash 3',datahash);
       }
 	    swiper.updateSlides()
 
