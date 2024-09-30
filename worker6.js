@@ -23,12 +23,14 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
   on: {
     init: async function (swiper) {
+      var datahash = 0;
       for (let i = 0; i < (countSlides * 3); i++) {
-        await loadSlide(swiper, photoIndex + i, username)
+        datahash = Math.floor(i/2) + 1;
+        await loadSlide(swiper, photoIndex + i, username, datahash)
       }
       swiper.keyboard.enable()
     },
-/*
+
     slideChangeTransitionStart: function (swiper) {
       swiper.keyboard.disable()
     },
@@ -37,7 +39,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       const nextIndex = swiper.slides.length + 1
       if (swiper.isEnd) {
         for (let i = 0; i < countSlides; i++) {
-          await loadSlide(swiper, nextIndex + i, username)
+          await loadSlide(swiper, nextIndex + i, username, datahash)
         }
       }
 	    swiper.updateSlides()
@@ -51,7 +53,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
       }
 
       swiper.keyboard.enable()
-    },*/
+    },
   }, // on
 }) // swiper
 
@@ -62,7 +64,7 @@ gBtnRight?.addEventListener('click', () => {
   gBtnRight?.setAttribute('disabled', 'disabled')
 })
 
-async function loadSlide(swiper, index, username) {
+async function loadSlide(swiper, index, username, datahash) {
   const imgUrl = `https://resolla.com/faces/${username}/${index}.jpg`
 
   try {
@@ -77,7 +79,7 @@ async function loadSlide(swiper, index, username) {
     slideEl.classList.add('swiper-slide')
     slideEl.id = `slide-${username}-${index}`
 
-    slideEl.setAttribute("data-hash", `${index}`)
+    slideEl.setAttribute("data-hash", `${datahash}`)
 
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
