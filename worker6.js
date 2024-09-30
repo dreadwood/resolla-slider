@@ -1,5 +1,7 @@
 'use strict'
 
+var datahash = 0; // slider fix
+
 /* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
   slidesPerView: 2,
@@ -23,7 +25,6 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
   on: {
     init: async function (swiper) {
-      var datahash = 0;
       for (let i = 0; i < (countSlides * 3); i++) {
         datahash = Math.floor(i/2) + 1;
         await loadSlide(swiper, photoIndex + i, username, datahash)
@@ -38,7 +39,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
     slideChangeTransitionEnd: async function (swiper) {
       const nextIndex = swiper.slides.length + 1
       if (swiper.isEnd) {
-        for (let i = 0; i < countSlides; i++) {
+        for (let i = 2*datahash; i < 2*datahash+countSlides; i++) {
+          datahash = Math.floor(i/2) + 1;
           await loadSlide(swiper, nextIndex + i, username, datahash)
         }
       }
