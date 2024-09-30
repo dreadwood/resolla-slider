@@ -38,13 +38,13 @@ const swiperInstanse = new Swiper('.swiper-container', {
     },
 
     slideChangeTransitionEnd: async function (swiper) {
-      const nextIndex = swiper.slides.length + 1
+      const nextIndex = swiper.slides.length + 1;
       if (swiper.isEnd) {
-        for (let i = 2*datahash; i <= 2*datahash+countSlides; i++) {
-          await loadSlide(swiper, nextIndex + i, username, Math.floor(i/2) + 1);
+        for (let i = 0; i < 2*countSlides; i++) {
+          await loadSlide(swiper, nextIndex + i, username, datahash+Math.floor(i/2) + 1);
         }
         console.log('datahash 2',datahash);
-        datahash = datahash+countSlides;
+        datahash = datahash + Math.floor((2*countSlides-1)/2) + 1;
         console.log('datahash 3',datahash);
       }
 	    swiper.updateSlides()
