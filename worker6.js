@@ -5,7 +5,7 @@ var datahash = 0; // slider fix
 /* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
   slidesPerView: 1,
-  slidesPerGroup: 2,
+  slidesPerGroup: 1,
   slidesPerColumn: 3,
   spaceBetween: 10,
   navigation: {
