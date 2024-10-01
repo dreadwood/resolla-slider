@@ -36,7 +36,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
 
     slideChange: function(swiper) {
 	document.querySelector(".swiper-pagination-total").innerHTML = 40
-    }
+    },
 	  
     slideChangeTransitionStart: function (swiper) {
       swiper.keyboard.disable()
