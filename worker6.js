@@ -51,7 +51,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
         //console.log('datahash 3',datahash);
       }
 	    swiper.updateSlides()
-	    console.log('swiper.slides.length',swiper.slides.length, typeof swiper.slides);
+	    console.log('swiper.slides.length',swiper.slides.length);
+		console.log(swiper.slides);
 
       if (!swiper.isBeginning) {
         gBtnLeft?.removeAttribute('disabled', 'disabled')
