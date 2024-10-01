@@ -26,7 +26,8 @@ const swiperInstanse = new Swiper('.swiper-container', {
   on: {
     init: async function (swiper) {
       for (let i = 0; i < (countSlides * 3); i++) {
-        datahash = Math.floor(i/2) + 1;
+        //datahash = Math.floor(i/2) + 1;
+        datahash = Math.floor(i/swiper.params.slidesPerView) + 1;
         await loadSlide(swiper, photoIndex + i, username, datahash);
       }
       //console.log('datahash 1',datahash);
@@ -41,10 +42,12 @@ const swiperInstanse = new Swiper('.swiper-container', {
       const nextIndex = swiper.slides.length + 1;
       if (swiper.isEnd) {
         for (let i = 0; i < 2*countSlides; i++) {
-          await loadSlide(swiper, nextIndex + i, username, datahash+Math.floor(i/2) + 1);
+          //await loadSlide(swiper, nextIndex + i, username, datahash+Math.floor(i/2) + 1);
+          await loadSlide(swiper, nextIndex + i, username, datahash+Math.floor(i/swiper.params.slidesPerView) + 1);
         }
         //console.log('datahash 2',datahash);
-        datahash = datahash + Math.floor((2*countSlides-1)/2) + 1;
+        //datahash = datahash + Math.floor((2*countSlides-1)/2) + 1;
+        datahash = datahash + Math.floor((2*countSlides-1)/swiper.params.slidesPerView) + 1;
         //console.log('datahash 3',datahash);
       }
 	    swiper.updateSlides()
