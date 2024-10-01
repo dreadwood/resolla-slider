@@ -55,6 +55,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
         //console.log('datahash 3',datahash);
       }
 	    swiper.updateSlides()
+	    document.querySelector(".swiper-pagination-total").innerHTML = 40
 	//    console.log('swiper.slides.length',swiper.slides.length);
 	//	console.log(swiper.slides);
 
