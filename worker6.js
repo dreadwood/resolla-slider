@@ -72,7 +72,7 @@ const swiperInstanse = new Swiper('.swiper-container', {
   }, // on
 }) // swiper
 
-countSlides = swiperInstanse.Params.slidesPerView * swiperInstanse.Params.slidesPerColumn;
+countSlides = swiperInstanse.params.slidesPerView * swiperInstanse.params.slidesPerColumn;
 console.log(countSlides);
 
 gBtnLeft?.addEventListener('click', () => {
