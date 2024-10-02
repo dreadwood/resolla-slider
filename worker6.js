@@ -1,6 +1,7 @@
 'use strict'
 
 var datahash = 0; // slider fix
+countSlides = viewParams.slidesPerView * viewParams.slidesPerColumn;
 
 /* Swiper v6.x */
 const swiperInstanse = new Swiper('.swiper-container', {
