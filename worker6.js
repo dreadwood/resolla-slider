@@ -99,6 +99,12 @@ async function loadSlide(swiper, index, username, datahash) {
 
     slideEl.setAttribute("data-hash", `${datahash}`)
 
+    let stH = parseInt(window.getComputedStyle(document.querySelector(".gallery__container")).getPropertyValue('height'))
+    if (stH) stH = (stH - document.querySelector(".swiper-container").style.paddingBottom - viewParams.slidesPerColumn * 10) / viewParams.slidesPerColumn
+    else stH = 600
+    slideEl.style.height = stH+"px"
+    console.log(slideEl.style.height)
+
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
 
