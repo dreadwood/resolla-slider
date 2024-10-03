@@ -108,6 +108,9 @@ async function loadSlide(swiper, index, username, datahash) {
     const imgEl = document.createElement('img')
     imgEl.src = imgUrl
 
+    imgEl.style.height = stH+"px"
+    console.log(imgEl.style.height)
+
     slideEl.appendChild(imgEl)
     swiper.appendSlide(slideEl)
     
